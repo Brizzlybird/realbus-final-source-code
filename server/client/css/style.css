@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+  width: 75%;
+  margin: 0 auto;
+}
+
+.route-path {
+  stroke: #009fe3;
+  stroke-width: 10;
+  /*stroke-dasharray: 10;*/
+  fill: none;
+}
+
+.bus-stop .st0 {
+  fill:#29316F;
+}
+
+.bus-stop .st1 {
+  fill:#F39200;
+}
+
+/* Setting the path for each section of the route */
+
+.path-0100BRA10081-0100BRA10086 {
+  offset-path: path('M 40,40 L 40,200');
+}
+
+.path-0100BRA10086-0100BRA10108 {
+  offset-path: path('M 40,200 H400');
+}
+
+.path-0100BRA10108-0100FBX18342 {
+  offset-path: path('M 400,200 L 400,150 H700 L 700,50');
+}
+
+.bus-icon {
+  /* Offset path only works in Chrome 55+. Google developed this as
+  they are starting to phase out SMIL (SVG's animation language). */
+  /*offset-path: path('M 40,40 L 40,200 H400 L 400,150 H700 L 700,50');*/
+  transform: translate(0px,0px);
+  fill: #ea5b0c;
+  /*animation: bus 30s;*/
+}
+
+/* Positioning the bus stops on the path */
+#cheddar-grove-0100BRA10081 {
+  transform: translate(5px, 0px);
+}
+
+#bishopsworth-0100BRA10086 {
+  transform: translate(5px, 170px);
+}
+
+#bishport-0100BRA10108 {
+  transform: translate(365px, 170px);
+}
+
+#hengrove-0100FBX18342 {
+  transform: translate(665px, 0px);
+}
+
+.stop-icon {
+  display: none;
+}

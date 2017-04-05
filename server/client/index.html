@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="realbus">
+  <head>
+    <title>RealBus</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  <body>
+    <div class="container">
+      <div ng-controller="BusCtrl">
+        <h2>Cheddar Grove to Hengrove Depot</h2>
+        <!-- Map SVG path -->
+        <svg height="400" width="800">
+          <g>
+            <path class="route-path" id="cheddar-bishopsworth" d="M 40,40 L 40,200" />
+            <path class="route-path" id="bishopsworth-bishport" d="M 40,200 H400" />
+            <path class="route-path" id="bishport-hengrove" d="M 400,200 L 400,150 H700 L 700,50"/>
+          </g>
+          <g ng-repeat="stop in bus_stop" id="{{stop}}" class="bus-stop">
+          	<path class="st0" d="M47.5,11.4H23.3l-12.1,21l12.1,21h24.2l12.1-21L47.5,11.4z M42.6,44.8H28.2L21,32.3l7.2-12.5h14.4l7.2,12.5
+          		L42.6,44.8z"/>
+          	<polygon class="st1" points="42.6,19.9 28.2,19.9 21,32.3 28.2,44.8 42.6,44.8 49.8,32.3 	"/>
+          </g>
+          <g id="bus-icons"></g>
+        </svg>
+      </div>
+    </div>
+    <div>Data from the Bristol API. Urbanthings.io</div>
+      <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+      <script src="node_modules/angular/angular.js"></script>
+      <!-- <script src="node_modules/angular-route/angular-route.js"></script> -->
+      <script src="node_modules/angular-animate/angular-animate.js"></script>
+      <script src="js/app.js"></script>
+      <script src="js/scripts.js"></script>
+  </body>
+</html>
